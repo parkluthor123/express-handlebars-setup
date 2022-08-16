@@ -4,7 +4,6 @@ const exphb = require('express-handlebars');
 const webRoutes = require('./routes/web');
 const apiRoutes = require('./routes/api');
 app.use(express.urlencoded({extended:false}));
-const serverless = require('serverless-http');
 
 // Environment Variables Setup
 const dotenv = require('dotenv');
@@ -26,5 +25,4 @@ app.listen(port, () =>{
     console.log(`Server is running on port ${port}`);
 })
 
-// module.exports = app
-module.exports.handler = serverless(app);
+module.exports = app
